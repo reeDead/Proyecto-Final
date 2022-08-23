@@ -3,12 +3,14 @@
     margin: 0px;
 }
 
+
 body {
     background-color: black;
     background-image: url(../Assets/background_image.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    font-size: 1rem;
 }
 
 /*Layout grid principal de mi pagina*/
@@ -46,9 +48,9 @@ h1 {
     margin: auto;
     align-self: center;
     font-family: Impact, Charcoal, sans-serif;
-    font-size: 50px;
-    letter-spacing: 2px;
-    word-spacing: 5px;
+    font-size: 3rem;
+    /* letter-spacing: 2px;
+    word-spacing: 5px; */
     color: #FFFFFF;
     font-weight: 500;
     text-decoration: none;
@@ -86,6 +88,7 @@ h1 {
         "album album";
     gap: 10px;
     overflow: auto;
+    justify-items: center;
 }
 
 .mainBio {
@@ -156,7 +159,7 @@ h1 {
 
 .player {
     grid-area: player;
-    margin-bottom: 10px;
+    margin-bottom: .5rem;
 }
 
 .footer {
@@ -184,15 +187,15 @@ h1 {
     border-style: solid;
     border-color: beige;
     justify-self: center;
-    padding: 20px;
+    padding: 1.5rem;
     background-color: black;
 }
 
 .titles {
     font-family: Impact, Charcoal, sans-serif;
-    font-size: 20px;
-    letter-spacing: 2px;
-    word-spacing: 5px;
+    font-size: 1.5rem;
+    /* letter-spacing: 2px;
+    word-spacing: 5px; */
     color: #FFFFFF;
     font-weight: 500;
     text-transform: uppercase;
@@ -203,42 +206,43 @@ h1 {
 .card {
     border: 4px double #890972;
     background-color: rgba(148, 0, 211, 0.219);
+    background-image: linear-gradient(to top, rgba(148, 0, 211 ), rgb(54, 0, 65)) ;
     text-align: center;
     overflow: auto;
     width: 80%;
-    height: 450px;
+    height: 28.5rem;
     align-content: center;
     justify-content: center;
 }
 
 
 .card img {
-    width: 200px;
+    width: 12rem;
 }
 
 .bioText {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 12px;
-    letter-spacing: 0px;
-    word-spacing: 0px;
+    font-size: .75rem;
+    /* letter-spacing: 0px;
+    word-spacing: 0px; */
     color: #FFFFFF;
     font-weight: 500;
     text-transform: uppercase;
     text-align: justify;
-    padding: 10px;
+    padding: .75rem;
 }
 
 .mainBio {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 15px;
-    letter-spacing: 1px;
-    word-spacing: 0px;
+    font-size: 1rem;
+    /* letter-spacing: 1px;
+    word-spacing: 0px; */
     color: #FFFFFF;
     font-weight: 500;
     text-transform: uppercase;
     text-align: end;
-    padding-top: 50px;
-    padding-right: 50px;
+    padding-top: 3rem;
+    padding-right: 3rem;
 }
 
 a {
@@ -252,9 +256,9 @@ a {
     border: 2px solid white;
     background-color: rgba(0, 0, 0, 0.411);
     justify-content: space-between;
-    margin-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-top: .9rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
 }
 
 .albums {
@@ -277,6 +281,12 @@ form {
 
 /*Ingresando diseño responsive para dispositivos moviles*/
 @media screen and (max-width: 480px) {
+    
+    /*Cambio para tamano de font*/
+    html{
+        font-size: 8px;
+    }
+
     .gridLayoutIndex {
 
         width: 100vw;
@@ -316,6 +326,21 @@ form {
             "video1" 
             "video2"
             "player";
+    }
+
+    .mainBio {
+        background-color: rgba(0, 0, 0, 0.411);
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "bandLive wtext"
+            "bandmate1 bandmate2" 
+            "bandmate3 bandmate4";
+        gap: 10px;
+        overflow: auto;
+        justify-items: center;
     }
 
 }
