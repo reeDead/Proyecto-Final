@@ -39,7 +39,7 @@ body {
 }
 
 .homeLogo {
-    width: 4%;
+    width: 4.5rem;
     border-radius: 50%;
 }
 
@@ -163,7 +163,8 @@ h1 {
 }
 
 .footer {
-    background-color: #89097167;
+    /*background-color: #89097167;*/
+    background-image: linear-gradient(to right, #89097167, rgba(255, 255, 255, 0.637));
     grid-area: foot;
     display: flex;
     justify-content: right;
@@ -203,21 +204,22 @@ h1 {
 
 }
 
-.card {
+.cards{
     border: 4px double #890972;
     background-color: rgba(148, 0, 211, 0.219);
     background-image: linear-gradient(to top, rgba(148, 0, 211 ), rgb(54, 0, 65)) ;
     text-align: center;
     overflow: auto;
     width: 80%;
-    height: 28.5rem;
+    height: 29rem;
     align-content: center;
     justify-content: center;
 }
 
 
-.card img {
+.cards img {
     width: 12rem;
+    align-self: center;
 }
 
 .bioText {
@@ -275,6 +277,7 @@ form {
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.411);
+    margin: 0 auto;
 
 }
 
@@ -332,12 +335,31 @@ form {
         background-color: rgba(0, 0, 0, 0.411);
         grid-area: main;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
         grid-template-areas:
-            "bandLive wtext"
-            "bandmate1 bandmate2" 
-            "bandmate3 bandmate4";
+            "bandLive"
+            "wtext"
+            "bandmate1"
+            "bandmate2" 
+            "bandmate3"
+            "bandmate4";
+        gap: 10px;
+        overflow: auto;
+        justify-items: center;
+    }
+
+    .mainDisc {
+        background-color: rgba(0, 0, 0, 0.411);
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas:
+            "album"
+            "album"
+            "album"
+            "album";
         gap: 10px;
         overflow: auto;
         justify-items: center;
