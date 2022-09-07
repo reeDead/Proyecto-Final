@@ -1,0 +1,10 @@
+$colors: (
+venusPurple: rgb(148, 0, 211 ),
+venusDarkPurple: rgb(54, 0, 65),
+venusPink: #89097167,
+);
+
+@mixin size ($w, $h) {
+    width: $w;
+    height: $h;
+}
