@@ -1,6 +1,9 @@
 @charset "UTF-8";
-/*Aqui inclui el codigode mis grids  y sus respectivas  sessiones
+/*Aqui inclui el codigo de mis grids  y sus respectivas  secciones
 asi como los media queries*/
+* {
+  box-sizing: border-box; }
+
 /*Layout grid principal de mi pagina*/
 .gridLayoutIndex {
   width: 100vw;
@@ -8,7 +11,7 @@ asi como los media queries*/
   display: grid;
   grid-template-areas: "header header header header" "navMenu main main main" "navMenu main main main" "foot foot foot foot";
   grid-template-columns: 1fr 3fr 3fr 3fr;
-  grid-template-rows: 7% 1fr 1fr 5%;
+  grid-template-rows: .2fr 1fr 1fr .2fr;
   gap: 10px; }
 
 .header {
@@ -155,6 +158,10 @@ h1 {
   text-align: justify;
   padding: .75rem; }
 
+@media screen and (min-width: 481px) and (max-width: 698px) {
+  .homeText {
+    font-size: 1rem; } }
+
 * {
   padding: 0px;
   margin: 0px; }
@@ -189,7 +196,8 @@ body {
 .bioImage {
   padding-top: 2rem;
   width: 60%;
-  margin: auto; }
+  margin: auto;
+  min-width: 300px; }
 
 .wtext {
   grid-area: wtext;
@@ -221,20 +229,25 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around; }
+  justify-content: space-around;
+  padding-left: 0rem; }
+  .uList li {
+    font-size: 1rem;
+    padding: 2rem; }
 
 .option {
   border-width: 2px;
   border-style: solid;
   border-color: beige;
   justify-self: center;
-  padding: 1.5rem;
+  padding: 1em;
   background-color: black; }
   @media (min-width: 481px) {
     .option:hover {
-      transform: translateX(30px); } }
+      transform: translateX(30px);
+      transition-duration: .5s; } }
 
-.cards, .cardsMerch {
+.cards, .cardsMerch, .cardsBio {
   border: 4px double #890972;
   background-color: rgba(148, 0, 211, 0.219);
   background-image: linear-gradient(to top, darkviolet, #360041);
@@ -246,13 +259,20 @@ body {
     height: 29rem;*/
   align-content: center;
   justify-content: center; }
-  .cards img, .cardsMerch img {
-    width: 12rem;
+  .cards img, .cardsMerch img, .cardsBio img {
+    width: 40%;
     align-self: center; }
 
 /*Utilice un Extend para cambiar la direccion del gradiente*/
 .cardsMerch {
   background-image: linear-gradient(to bottom, darkviolet, #360041); }
+  .cardsMerch img {
+    width: 40%;
+    min-width: 200px; }
+
+.cardsBio img {
+  width: 50%;
+  min-width: 150px; }
 
 a {
   display: contents;
@@ -290,5 +310,6 @@ form {
     flex-direction: row; } }
 
 /*Animaciones variadas*/
-.zoom:hover {
-  transform: scale(2) translateY(50px); }
+@media screen and (min-width: 481px) {
+  .zoom:hover {
+    transform: scale(2) translateY(50px); } }

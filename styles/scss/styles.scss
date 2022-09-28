@@ -46,6 +46,7 @@ body {
     padding-top: 2rem;
     width: 60%;
     margin: auto;
+    min-width: 300px;
 }
 
 .wtext {
@@ -85,6 +86,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding-left: 0rem;
+    li{
+        font-size:1rem;
+        padding:2rem;
+    }
 }
 
 .option {
@@ -92,11 +98,12 @@ body {
     border-style: solid;
     border-color: beige;
     justify-self: center;
-    padding: 1.5rem;
+    padding: 1em;
     background-color: black;
     @media (min-width: 481px){
     &:hover{
         transform: translateX(30px);
+        transition-duration: .5s;
     }
     }
 }
@@ -114,7 +121,7 @@ body {
     justify-content: center;
     
     img {
-        width: 12rem;
+        width: 40%;
         align-self: center;
     }
 }
@@ -123,6 +130,18 @@ body {
 .cardsMerch{
     @extend .cards;
     background-image: linear-gradient(to bottom, map-get($map: $colors, $key: venusPurple), map-get($map: $colors, $key: venusDarkPurple)) ;  
+    img{
+        width:40%;
+        min-width: 200px;
+    }
+}
+
+.cardsBio{
+    @extend .cards;
+    img{ 
+        width: 50%;
+        min-width: 150px;
+    }
 }
 
 a {
@@ -171,6 +190,9 @@ form {
 }
 /*Animaciones variadas*/
 
+@media screen and (min-width: 481px) {
+    
 .zoom:hover{
     transform: scale(2) translateY(50px);
+}
 }
